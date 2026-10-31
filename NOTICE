@@ -1,0 +1,27 @@
+ComfyUI Character Atlas ZH — 素材与第三方来源说明
+==================================================
+
+本仓库中的源代码采用 MIT 许可，见 `LICENSE`。
+`LICENSE` 的 MIT 条款**只覆盖**作者新写的插件代码（`__init__.py`、`nodes.py`、
+`catalog.py`、`routes.py`、`web/`、`scripts/`、`tests/`、`examples/` 等）。
+
+图片素材与图库原始数据的权利不属于本项目，不适用 MIT，也不随本项目授权。
+
+1. 人像（portrait）
+   - 中文索引与图片来自 Anhao AI 角色三合一参考台的公开仓库。
+   - 站点：https://ai-pose-gallery.anhao.app/costumes
+   - 仓库：https://github.com/anhao/ai-pose-gallery-zh
+   - 图片与原始数据权利属于原作者 ギア（@giaaibusi）。
+   - 本仓库不包含这些人像图片（`library/img/`、`library/thumbs/` 已列入 .gitignore），
+     需由使用者运行 `scripts/download_portraits.py` 自行取回。
+
+2. 服装（costume）、姿势（pose）
+   - 图片来自本机已安装的 ComfyUI 插件的既有素材，权利归各插件及其上游作者。
+
+3. 使用要求
+   - 商用、二次分发、模型训练等用途，请先确认原素材条款并取得授权。
+   - 本项目仅提供本地浏览与组合参考的技术实现，不对素材的可用性作任何承诺。
+
+4. 兼容性
+   - 示例工作流引用的模型（MOSS、Qwen-Image 2.1、Krea2、Depth Anything V2 等）
+     各有自己的许可证，请分别遵守。

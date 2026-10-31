@@ -84,4 +84,12 @@ F:\ComfyUI\custom_nodes\
 
 - 界面与功能参考：[Anhao AI 角色三合一参考台](https://ai-pose-gallery.anhao.app/costumes)及其[公开仓库](https://github.com/anhao/ai-pose-gallery-zh)。
 - 人像中文索引与图片来自上述公开仓库；姿势、服装使用本机两个插件的已有素材。
-- 图片及原始数据权利属于原作者 ギア（@giaaibusi），不适用本插件代码的 MIT 许可；请遵守原素材条款。本插件新增代码采用 MIT，见 `LICENSE`。
+
+许可分两部分：
+
+| 范围 | 文件 | 说明 |
+| --- | --- | --- |
+| 插件代码（`*.py`、`web/`、`scripts/`、`tests/`、`examples/`） | `LICENSE` | MIT |
+| 图片素材、图库原始数据、第三方模型 | `NOTICE` | 不适用 MIT，权利归原出处 |
+
+人像图片与原始数据权利属于原作者 ギア（@giaaibusi）；商用、二次分发或用于训练前请自行确认原素材条款。
