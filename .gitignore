@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+library/img/
+library/thumbs/
+library/download-failures.json
+tests/.runtime/

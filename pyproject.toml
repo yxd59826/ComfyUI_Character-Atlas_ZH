@@ -1,0 +1,11 @@
+[project]
+name = "ComfyUI_Character-Atlas_ZH"
+version = "1.0.1"
+description = "Offline Chinese portrait, costume and pose reference atlas for ComfyUI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT (source code only; images and original data have separate terms)" }
+
+[tool.comfy]
+DisplayName = "ComfyUI Character Atlas ZH（角色三合一图库）"
+Icon = ""
