@@ -82,6 +82,15 @@ class AtlasTests(unittest.TestCase):
         self.assertNotEqual(node.execute(flip_pose=False)[2].numpy().tobytes(),
                             node.execute(flip_pose=True)[2].numpy().tobytes())
 
+    def test_node_schema_matches_widgets(self):
+        required = self.nodes.CharacterAtlas.INPUT_TYPES()["required"]
+        self.assertNotIn("portrait_view", required)
+        self.assertEqual(
+            [name for name in required if name not in {"portrait_id", "costume_id", "pose_id"}],
+            ["style", "randomize_on_run", "seed", "resize_mode", "width", "height", "flip_pose"],
+        )
+        self.assertEqual(len(self.nodes.CharacterAtlas.RETURN_TYPES), 6)
+
     def test_cache_key_tracks_every_visual_input(self):
         node = self.nodes.CharacterAtlas()
         baseline = node.IS_CHANGED()
