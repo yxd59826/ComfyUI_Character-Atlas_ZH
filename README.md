@@ -55,18 +55,22 @@ F:\ComfyUI\custom_nodes\
 
 ## 示例工作流
 
-`examples/` 里有三个已实测跑通的工作流，复制到 `F:\ComfyUI\user\default\workflows\` 即可打开：
+`examples/` 里有五个已实测跑通的工作流，复制到 `F:\ComfyUI\user\default\workflows\` 即可打开：
 
 | 文件 | 用途 | 需要模型 |
 | --- | --- | --- |
 | `01_只看参考_零依赖.json` | 只看三张参考图 + 拼图 + 提示词，不加载任何模型 | 无 |
 | `02_Qwen-Image-2.1_三图融合.json` | 人像/服装/姿势分别接 `TextEncodeQwenImage21` 的 image_1/2/3，真融合出图 | Qwen-Image 2.1（UNet + qwen3vl + vae） |
-| `03_MOSS_人像肌感_深度控制.json` | 姿势图走 Depth Anything V2 → `MOSSImageControl`，复刻人像肌感主链 | MOSS base+sft、两个 LoRA、Depth Anything V2 |
+| `03_MOSS_人像肌感_深度控制.json` | 姿势图走 Depth Anything V2 → `MOSSImageControl`，复刻人像肌感主链（只有姿势生效） | MOSS base+sft、两个 LoRA、Depth Anything V2 |
+| `04_MOSS_编辑版_人脸加服装.json` | 人像/服装/姿势进 `TextEncodeMOSSImageEdit`（Picture 1/2/3），走官方 edit LoRA | 03 的模型 + `moss_image_edit_lora_rank_64_bf16` |
+| `05_Krea2_换装_保脸最稳.json` | `Krea2 Identity Edit v1.2` try-on，人像 + 服装两张参考，**保脸最稳** | krea2_turbo、qwen3vl_4b、qwen_image_vae、`krea2_identity_edit_v1_2` |
 
+保脸实测（同一测试条件下 insightface 余弦相似度）：Krea2 **0.458** > Qwen 0.347 ≫ MOSS 0.07。
 明细见 `examples/README.md`（含模型清单、调参提示和验证记录）。
 
 ## 更新记录
 
+- 1.0.3：新增示例 04（MOSS 编辑版，人像/服装/姿势进 `TextEncodeMOSSImageEdit`）和 05（Krea2 Identity Edit 换装）；补保脸实测对比（Krea2 0.458 / Qwen 0.347 / MOSS 0.07）；示例全部在本机 8188 实跑 `status success`。
 - 1.0.2：新增 `examples/` 三个示例工作流（零依赖预览、Qwen-Image 2.1 三图融合、MOSS 深度控制），均已在本机 8188 实测 `status success`。
 - 1.0.1：修正 `IS_CHANGED` 未跟踪尺寸、画风、翻转等参数导致改参数后命中缓存的问题；隐藏按钮和预览控件不再写入工作流 `widgets_values`；移除无效的“人像视图”选项（公开人像库没有全身图数据）。
 
