@@ -53,8 +53,21 @@ F:\ComfyUI\custom_nodes\
 - `MOSSImageControl` 只负责把深度图编码进条件，本身不含 ControlNet 权重；`strength` 建议 1.0、`start_percent` 0、`end_percent` 1.0。
 - 普通 SD/Flux 工作流则接对应的 ControlNet（depth/openpose）节点。
 
+## 示例工作流
+
+`examples/` 里有三个已实测跑通的工作流，复制到 `F:\ComfyUI\user\default\workflows\` 即可打开：
+
+| 文件 | 用途 | 需要模型 |
+| --- | --- | --- |
+| `01_只看参考_零依赖.json` | 只看三张参考图 + 拼图 + 提示词，不加载任何模型 | 无 |
+| `02_Qwen-Image-2.1_三图融合.json` | 人像/服装/姿势分别接 `TextEncodeQwenImage21` 的 image_1/2/3，真融合出图 | Qwen-Image 2.1（UNet + qwen3vl + vae） |
+| `03_MOSS_人像肌感_深度控制.json` | 姿势图走 Depth Anything V2 → `MOSSImageControl`，复刻人像肌感主链 | MOSS base+sft、两个 LoRA、Depth Anything V2 |
+
+明细见 `examples/README.md`（含模型清单、调参提示和验证记录）。
+
 ## 更新记录
 
+- 1.0.2：新增 `examples/` 三个示例工作流（零依赖预览、Qwen-Image 2.1 三图融合、MOSS 深度控制），均已在本机 8188 实测 `status success`。
 - 1.0.1：修正 `IS_CHANGED` 未跟踪尺寸、画风、翻转等参数导致改参数后命中缓存的问题；隐藏按钮和预览控件不再写入工作流 `widgets_values`；移除无效的“人像视图”选项（公开人像库没有全身图数据）。
 
 ## 验证

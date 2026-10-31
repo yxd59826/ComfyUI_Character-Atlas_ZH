@@ -1,0 +1,2448 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "revision": 0,
+  "last_node_id": 48,
+  "last_link_id": 121,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CharacterAtlas",
+      "pos": [
+        60,
+        120
+      ],
+      "size": [
+        400,
+        606
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "portrait_id",
+          "type": "STRING",
+          "localized_name": "portrait_id",
+          "widget": {
+            "name": "portrait_id"
+          },
+          "link": null
+        },
+        {
+          "name": "costume_id",
+          "type": "STRING",
+          "localized_name": "costume_id",
+          "widget": {
+            "name": "costume_id"
+          },
+          "link": null
+        },
+        {
+          "name": "pose_id",
+          "type": "STRING",
+          "localized_name": "pose_id",
+          "widget": {
+            "name": "pose_id"
+          },
+          "link": null
+        },
+        {
+          "name": "style",
+          "type": "COMBO",
+          "localized_name": "style",
+          "widget": {
+            "name": "style"
+          },
+          "link": null
+        },
+        {
+          "name": "randomize_on_run",
+          "type": "BOOLEAN",
+          "localized_name": "randomize_on_run",
+          "widget": {
+            "name": "randomize_on_run"
+          },
+          "link": null
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "localized_name": "seed",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "name": "resize_mode",
+          "type": "COMBO",
+          "localized_name": "resize_mode",
+          "widget": {
+            "name": "resize_mode"
+          },
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "localized_name": "width",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "localized_name": "height",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "name": "flip_pose",
+          "type": "BOOLEAN",
+          "localized_name": "flip_pose",
+          "widget": {
+            "name": "flip_pose"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "人像图片",
+          "type": "IMAGE",
+          "localized_name": "人像图片",
+          "links": []
+        },
+        {
+          "name": "服装图片",
+          "type": "IMAGE",
+          "localized_name": "服装图片",
+          "links": []
+        },
+        {
+          "name": "姿势图片",
+          "type": "IMAGE",
+          "localized_name": "姿势图片",
+          "links": [
+            113
+          ]
+        },
+        {
+          "name": "参考拼图",
+          "type": "IMAGE",
+          "localized_name": "参考拼图",
+          "links": []
+        },
+        {
+          "name": "组合提示词",
+          "type": "STRING",
+          "localized_name": "组合提示词",
+          "links": [
+            109
+          ]
+        },
+        {
+          "name": "配方JSON",
+          "type": "STRING",
+          "localized_name": "配方JSON",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CharacterAtlas"
+      },
+      "widgets_values": [
+        "f71f980dde3",
+        "SPR-0001",
+        "full_single_P001_front",
+        "写实人像写真",
+        false,
+        0,
+        "randomize",
+        "等比留边",
+        1024,
+        1360,
+        false
+      ]
+    },
+    {
+      "id": 30,
+      "type": "UNETLoader",
+      "pos": [
+        60,
+        820
+      ],
+      "size": [
+        449.3132441460882,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "unet_name",
+          "localized_name": "UNet名称",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "label": "weight_dtype",
+          "localized_name": "数据类型",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            101
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "weight_dtype": true,
+          "unet_name": true
+        }
+      },
+      "widgets_values": [
+        "moss_image_base_bf16.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "moss_image_base_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 31,
+      "type": "UNETLoader",
+      "pos": [
+        60,
+        1020
+      ],
+      "size": [
+        440.5532668740491,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "unet_name",
+          "localized_name": "UNet名称",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "label": "weight_dtype",
+          "localized_name": "数据类型",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            102
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "weight_dtype": true,
+          "unet_name": true
+        }
+      },
+      "widgets_values": [
+        "moss_image_sft_bf16.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "moss_image_sft_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 32,
+      "type": "MOSSMergePreset",
+      "pos": [
+        420,
+        820
+      ],
+      "size": [
+        440,
+        156
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "base_model",
+          "localized_name": "base_model",
+          "name": "base_model",
+          "type": "MODEL",
+          "link": 101
+        },
+        {
+          "label": "sft_model",
+          "localized_name": "sft_model",
+          "name": "sft_model",
+          "type": "MODEL",
+          "link": 102
+        },
+        {
+          "label": "preset",
+          "localized_name": "preset",
+          "name": "preset",
+          "type": "COMBO",
+          "widget": {
+            "name": "preset"
+          },
+          "link": null
+        },
+        {
+          "label": "strength",
+          "localized_name": "strength",
+          "name": "strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength"
+          },
+          "link": null
+        },
+        {
+          "label": "merge_info",
+          "localized_name": "merge_info",
+          "name": "merge_info",
+          "type": "STRING",
+          "widget": {
+            "name": "merge_info"
+          },
+          "link": null
+        },
+        {
+          "label": "m_video_embedder",
+          "localized_name": "m_video_embedder",
+          "name": "m_video_embedder",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_video_embedder"
+          },
+          "link": null
+        },
+        {
+          "label": "m_text_proj",
+          "localized_name": "m_text_proj",
+          "name": "m_text_proj",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_text_proj"
+          },
+          "link": null
+        },
+        {
+          "label": "m_text_block0",
+          "localized_name": "m_text_block0",
+          "name": "m_text_block0",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_text_block0"
+          },
+          "link": null
+        },
+        {
+          "label": "m_text_block1",
+          "localized_name": "m_text_block1",
+          "name": "m_text_block1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_text_block1"
+          },
+          "link": null
+        },
+        {
+          "label": "m_time",
+          "localized_name": "m_time",
+          "name": "m_time",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_time"
+          },
+          "link": null
+        },
+        {
+          "label": "m_shared",
+          "localized_name": "m_shared",
+          "name": "m_shared",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_shared"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L00",
+          "localized_name": "m_L00",
+          "name": "m_L00",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L00"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L01",
+          "localized_name": "m_L01",
+          "name": "m_L01",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L01"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L02",
+          "localized_name": "m_L02",
+          "name": "m_L02",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L02"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L03",
+          "localized_name": "m_L03",
+          "name": "m_L03",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L03"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L04",
+          "localized_name": "m_L04",
+          "name": "m_L04",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L04"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L05",
+          "localized_name": "m_L05",
+          "name": "m_L05",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L05"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L06",
+          "localized_name": "m_L06",
+          "name": "m_L06",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L06"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L07",
+          "localized_name": "m_L07",
+          "name": "m_L07",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L07"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L08",
+          "localized_name": "m_L08",
+          "name": "m_L08",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L08"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L09",
+          "localized_name": "m_L09",
+          "name": "m_L09",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L09"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L10",
+          "localized_name": "m_L10",
+          "name": "m_L10",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L10"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L11",
+          "localized_name": "m_L11",
+          "name": "m_L11",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L11"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L12",
+          "localized_name": "m_L12",
+          "name": "m_L12",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L12"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L13",
+          "localized_name": "m_L13",
+          "name": "m_L13",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L13"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L14",
+          "localized_name": "m_L14",
+          "name": "m_L14",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L14"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L15",
+          "localized_name": "m_L15",
+          "name": "m_L15",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L15"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L16",
+          "localized_name": "m_L16",
+          "name": "m_L16",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L16"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L17",
+          "localized_name": "m_L17",
+          "name": "m_L17",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L17"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L18",
+          "localized_name": "m_L18",
+          "name": "m_L18",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L18"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L19",
+          "localized_name": "m_L19",
+          "name": "m_L19",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L19"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L20",
+          "localized_name": "m_L20",
+          "name": "m_L20",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L20"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L21",
+          "localized_name": "m_L21",
+          "name": "m_L21",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L21"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L22",
+          "localized_name": "m_L22",
+          "name": "m_L22",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L22"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L23",
+          "localized_name": "m_L23",
+          "name": "m_L23",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L23"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L24",
+          "localized_name": "m_L24",
+          "name": "m_L24",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L24"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L25",
+          "localized_name": "m_L25",
+          "name": "m_L25",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L25"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L26",
+          "localized_name": "m_L26",
+          "name": "m_L26",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L26"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L27",
+          "localized_name": "m_L27",
+          "name": "m_L27",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L27"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L28",
+          "localized_name": "m_L28",
+          "name": "m_L28",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L28"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L29",
+          "localized_name": "m_L29",
+          "name": "m_L29",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L29"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L30",
+          "localized_name": "m_L30",
+          "name": "m_L30",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L30"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L31",
+          "localized_name": "m_L31",
+          "name": "m_L31",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L31"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L32",
+          "localized_name": "m_L32",
+          "name": "m_L32",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L32"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L33",
+          "localized_name": "m_L33",
+          "name": "m_L33",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L33"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L34",
+          "localized_name": "m_L34",
+          "name": "m_L34",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L34"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L35",
+          "localized_name": "m_L35",
+          "name": "m_L35",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L35"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L36",
+          "localized_name": "m_L36",
+          "name": "m_L36",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L36"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L37",
+          "localized_name": "m_L37",
+          "name": "m_L37",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L37"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L38",
+          "localized_name": "m_L38",
+          "name": "m_L38",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L38"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L39",
+          "localized_name": "m_L39",
+          "name": "m_L39",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L39"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L40",
+          "localized_name": "m_L40",
+          "name": "m_L40",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L40"
+          },
+          "link": null
+        },
+        {
+          "label": "m_L41",
+          "localized_name": "m_L41",
+          "name": "m_L41",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_L41"
+          },
+          "link": null
+        },
+        {
+          "label": "m_final_norm",
+          "localized_name": "m_final_norm",
+          "name": "m_final_norm",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_final_norm"
+          },
+          "link": null
+        },
+        {
+          "label": "m_final_linear",
+          "localized_name": "m_final_linear",
+          "name": "m_final_linear",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_final_linear"
+          },
+          "link": null
+        },
+        {
+          "label": "m_head",
+          "localized_name": "m_head",
+          "name": "m_head",
+          "type": "FLOAT",
+          "widget": {
+            "name": "m_head"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MOSSMergePreset",
+        "aux_id": "slmonker/ComfyUI-MOSS-Merge-Presets",
+        "ver": "5dd3f00bde3d8eeab0ea57569b62ec390b22bbf6",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "m_shared": true,
+          "strength": true,
+          "m_L17": true,
+          "m_L18": true,
+          "m_L19": true,
+          "m_L24": true,
+          "m_L25": true,
+          "m_L26": true,
+          "m_L27": true,
+          "m_L20": true,
+          "m_L21": true,
+          "m_L22": true,
+          "m_L23": true,
+          "m_head": true,
+          "m_text_proj": true,
+          "merge_info": true,
+          "m_L06": true,
+          "m_L07": true,
+          "m_time": true,
+          "m_L08": true,
+          "m_L09": true,
+          "m_L13": true,
+          "m_L14": true,
+          "m_L15": true,
+          "m_L16": true,
+          "m_L10": true,
+          "m_L11": true,
+          "m_L12": true,
+          "preset": true,
+          "m_L39": true,
+          "m_L02": true,
+          "m_L03": true,
+          "m_L04": true,
+          "m_L05": true,
+          "m_L00": true,
+          "m_L01": true,
+          "m_L40": true,
+          "m_L41": true,
+          "m_video_embedder": true,
+          "m_L28": true,
+          "m_L29": true,
+          "m_L35": true,
+          "m_L36": true,
+          "m_L37": true,
+          "m_L38": true,
+          "m_L31": true,
+          "m_L32": true,
+          "m_final_linear": true,
+          "m_L33": true,
+          "m_L34": true,
+          "m_text_block1": true,
+          "m_final_norm": true,
+          "m_L30": true,
+          "m_text_block0": true
+        }
+      },
+      "widgets_values": [
+        "Balanced",
+        0.45,
+        "Balanced | strength 0.45\nvideo_embedder=0.09  text_proj=0.09  text_blocks=0.07/0.07\ntime_embedding=0.11  shared_modulation=0.09\nlayers: L00=0.07 L01=0.07 L02=0.07 L03=0.07 L04=0.07 L05=0.07 L06=0.07 L07=0.07 L08=0.09 L09=0.09 L10=0.09 L11=0.09 L12=0.09 L13=0.09 L14=0.14 L15=0.14 L16=0.14 L17=0.14 L18=0.14 L19=0.14 L20=0.14 L21=0.14 L22=0.20 L23=0.20 L24=0.20 L25=0.20 L26=0.20 L27=0.20 L28=0.20 L29=0.20 L30=0.27 L31=0.27 L32=0.27 L33=0.27 L34=0.27 L35=0.27 L36=0.32 L37=0.32 L38=0.32 L39=0.32 L40=0.32 L41=0.32\nfinal_norm=0.09  final_linear=0.16  video_head=0.09",
+        0.2,
+        0.2,
+        0.16,
+        0.16,
+        0.24,
+        0.2,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.45,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.72,
+        0.72,
+        0.72,
+        0.72,
+        0.72,
+        0.72,
+        0.2,
+        0.35,
+        0.2
+      ],
+      "widgets_values_named": {
+        "preset": "Balanced",
+        "strength": 0.45,
+        "merge_info": "Balanced | strength 0.45\nvideo_embedder=0.09  text_proj=0.09  text_blocks=0.07/0.07\ntime_embedding=0.11  shared_modulation=0.09\nlayers: L00=0.07 L01=0.07 L02=0.07 L03=0.07 L04=0.07 L05=0.07 L06=0.07 L07=0.07 L08=0.09 L09=0.09 L10=0.09 L11=0.09 L12=0.09 L13=0.09 L14=0.14 L15=0.14 L16=0.14 L17=0.14 L18=0.14 L19=0.14 L20=0.14 L21=0.14 L22=0.20 L23=0.20 L24=0.20 L25=0.20 L26=0.20 L27=0.20 L28=0.20 L29=0.20 L30=0.27 L31=0.27 L32=0.27 L33=0.27 L34=0.27 L35=0.27 L36=0.32 L37=0.32 L38=0.32 L39=0.32 L40=0.32 L41=0.32\nfinal_norm=0.09  final_linear=0.16  video_head=0.09",
+        "m_video_embedder": 0.2,
+        "m_text_proj": 0.2,
+        "m_text_block0": 0.16,
+        "m_text_block1": 0.16,
+        "m_time": 0.24,
+        "m_shared": 0.2,
+        "m_L00": 0.15,
+        "m_L01": 0.15,
+        "m_L02": 0.15,
+        "m_L03": 0.15,
+        "m_L04": 0.15,
+        "m_L05": 0.15,
+        "m_L06": 0.15,
+        "m_L07": 0.15,
+        "m_L08": 0.2,
+        "m_L09": 0.2,
+        "m_L10": 0.2,
+        "m_L11": 0.2,
+        "m_L12": 0.2,
+        "m_L13": 0.2,
+        "m_L14": 0.3,
+        "m_L15": 0.3,
+        "m_L16": 0.3,
+        "m_L17": 0.3,
+        "m_L18": 0.3,
+        "m_L19": 0.3,
+        "m_L20": 0.3,
+        "m_L21": 0.3,
+        "m_L22": 0.45,
+        "m_L23": 0.45,
+        "m_L24": 0.45,
+        "m_L25": 0.45,
+        "m_L26": 0.45,
+        "m_L27": 0.45,
+        "m_L28": 0.45,
+        "m_L29": 0.45,
+        "m_L30": 0.6,
+        "m_L31": 0.6,
+        "m_L32": 0.6,
+        "m_L33": 0.6,
+        "m_L34": 0.6,
+        "m_L35": 0.6,
+        "m_L36": 0.72,
+        "m_L37": 0.72,
+        "m_L38": 0.72,
+        "m_L39": 0.72,
+        "m_L40": 0.72,
+        "m_L41": 0.72,
+        "m_final_norm": 0.2,
+        "m_final_linear": 0.35,
+        "m_head": 0.2
+      }
+    },
+    {
+      "id": 33,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        420,
+        1500
+      ],
+      "size": [
+        346.4773016798865,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 103
+        },
+        {
+          "label": "lora_name",
+          "localized_name": "LoRA名称",
+          "name": "lora_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name"
+          },
+          "link": null
+        },
+        {
+          "label": "strength_model",
+          "localized_name": "模型强度",
+          "name": "strength_model",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "cnr_id": "comfy-core",
+        "ver": "0.41.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "lora_name": true,
+          "strength_model": true
+        }
+      },
+      "widgets_values": [
+        "moss\\moss_image_color_depth_control.safetensors",
+        1.0
+      ],
+      "widgets_values_named": {
+        "lora_name": "moss\\moss_image_color_depth_control.safetensors",
+        "strength_model": 1.0000000000000002
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 34,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        420,
+        1700
+      ],
+      "size": [
+        346.4773016798865,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 104
+        },
+        {
+          "label": "lora_name",
+          "localized_name": "LoRA名称",
+          "name": "lora_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name"
+          },
+          "link": null
+        },
+        {
+          "label": "strength_model",
+          "localized_name": "模型强度",
+          "name": "strength_model",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            105
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "cnr_id": "comfy-core",
+        "ver": "0.41.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "lora_name": true,
+          "strength_model": true
+        }
+      },
+      "widgets_values": [
+        "moss\\KOOK-MOSS-SFT-观澜.safetensors",
+        0.9
+      ],
+      "widgets_values_named": {
+        "lora_name": "moss\\KOOK-MOSS-SFT-观澜.safetensors",
+        "strength_model": 0.9
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 35,
+      "type": "SkipLayerGuidanceDiTSimple",
+      "pos": [
+        420,
+        1900
+      ],
+      "size": [
+        343,
+        130
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "showAdvanced": true,
+      "inputs": [
+        {
+          "label": "model",
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 105
+        },
+        {
+          "label": "double_layers",
+          "localized_name": "双层",
+          "name": "double_layers",
+          "type": "STRING",
+          "widget": {
+            "name": "double_layers"
+          },
+          "link": null
+        },
+        {
+          "label": "single_layers",
+          "localized_name": "单层",
+          "name": "single_layers",
+          "type": "STRING",
+          "widget": {
+            "name": "single_layers"
+          },
+          "link": null
+        },
+        {
+          "label": "start_percent",
+          "localized_name": "开始百分比",
+          "name": "start_percent",
+          "type": "FLOAT",
+          "widget": {
+            "name": "start_percent"
+          },
+          "link": null
+        },
+        {
+          "label": "end_percent",
+          "localized_name": "结束百分比",
+          "name": "end_percent",
+          "type": "FLOAT",
+          "widget": {
+            "name": "end_percent"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            106
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SkipLayerGuidanceDiTSimple",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "single_layers": true,
+          "double_layers": true,
+          "start_percent": true,
+          "end_percent": true
+        }
+      },
+      "widgets_values": [
+        "",
+        "22",
+        0,
+        0.5
+      ],
+      "widgets_values_named": {
+        "double_layers": "",
+        "single_layers": "22",
+        "start_percent": 0,
+        "end_percent": 0.5
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 36,
+      "type": "KSampler",
+      "pos": [
+        1400,
+        120
+      ],
+      "size": [
+        253.47061248924956,
+        289.6230792463541
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 106
+        },
+        {
+          "label": "positive",
+          "localized_name": "正面条件",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 116
+        },
+        {
+          "label": "negative",
+          "localized_name": "负面条件",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 117
+        },
+        {
+          "label": "latent_image",
+          "localized_name": "Latent图像",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 118
+        },
+        {
+          "label": "seed",
+          "localized_name": "种子",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "label": "steps",
+          "localized_name": "步数",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "label": "cfg",
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "label": "sampler_name",
+          "localized_name": "采样器名称",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "label": "scheduler",
+          "localized_name": "调度器",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "label": "denoise",
+          "localized_name": "降噪",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            120
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "scheduler": true,
+          "denoise": true,
+          "seed": true,
+          "cfg": true,
+          "sampler_name": true,
+          "steps": true
+        },
+        "ttNbgOverride": {
+          "bgcolor": "#335",
+          "groupcolor": "#88A",
+          "color": "#223"
+        }
+      },
+      "widgets_values": [
+        0,
+        "randomize",
+        25,
+        3.5,
+        "er_sde",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 281498879390722,
+        "control_after_generate": "randomize",
+        "steps": 25,
+        "cfg": 3.5,
+        "sampler_name": "er_sde",
+        "scheduler": "simple",
+        "denoise": 1
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 37,
+      "type": "VAELoader",
+      "pos": [
+        60,
+        2100
+      ],
+      "size": [
+        350,
+        60
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "vae_name",
+          "localized_name": "vae名称",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "VAE",
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            112,
+            119
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "models": [
+          {
+            "name": "flux2-vae_small.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/vae/flux2-vae_small.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "vae_name": true
+        }
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "flux2-vae.safetensors"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 38,
+      "type": "VAEDecode",
+      "pos": [
+        1400,
+        480
+      ],
+      "size": [
+        230,
+        70
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "localized_name": "Latent",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 120
+        },
+        {
+          "label": "vae",
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 119
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            121
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {},
+        "ttNbgOverride": {
+          "bgcolor": "#335",
+          "groupcolor": "#88A",
+          "color": "#223"
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 39,
+      "type": "SaveImage",
+      "pos": [
+        1700,
+        120
+      ],
+      "size": [
+        237.43616132120928,
+        404.08759421242075
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "localized_name": "图片",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 121
+        },
+        {
+          "label": "filename_prefix",
+          "localized_name": "文件名前缀",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image_urls",
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "filename_prefix": true
+        },
+        "ttNbgOverride": {
+          "bgcolor": "#335",
+          "groupcolor": "#88A",
+          "color": "#223"
+        }
+      },
+      "widgets_values": [
+        "CharacterAtlas/MOSS_肌感"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "Moss/moss_image_t2i"
+      },
+      "color": "#205b87",
+      "bgcolor": "#0c4773"
+    },
+    {
+      "id": 40,
+      "type": "CLIPLoader",
+      "pos": [
+        860,
+        700
+      ],
+      "size": [
+        355,
+        106
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "showAdvanced": false,
+      "inputs": [
+        {
+          "label": "clip_name",
+          "localized_name": "CLIP名称",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "label": "type",
+          "localized_name": "类型",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "label": "device",
+          "localized_name": "设备",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CLIP",
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            107,
+            108
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "models": [
+          {
+            "name": "qwen3.5_9b_w4a8_gptq.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/text_encoders/qwen3.5_9b_w4a8_gptq.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "clip_name": true,
+          "type": true,
+          "device": true
+        }
+      },
+      "widgets_values": [
+        "qwen3.5_9b_int8_convrot.safetensors",
+        "moss_image",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
+        "type": "moss_image",
+        "device": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 41,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1290,
+        700
+      ],
+      "size": [
+        369.4697562213505,
+        88
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 107
+        },
+        {
+          "label": "text",
+          "localized_name": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 109
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            110
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "text": true
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "text": "一位深色短发女性坐在高处灰色混凝土平台边缘，短发蓬松微卷，戴着细窄红粉色边框眼镜，妆容精致、唇色偏红，身穿豹纹露肩短款针织毛衣和低腰黑色短裤，腰间垂挂银色链条与金属扣件，身体略微前倾，一条腿屈膝收拢，另一条腿自然向镜头下方伸出，双脚完全赤裸、不穿鞋、不穿袜，脚趾自然舒展，脚底与脚背清晰可见，脚踝佩戴银色珠链和细小吊饰，双手撑在身后的混凝土台面上，头微微抬起，神情冷艳放松。竖幅 3:4 构图，低机位广角仰拍，利用近大远小的强透视突出前景中赤裸的双脚、修长腿部与人物坐姿，背景占据大面积画面的是层次丰富的紫粉色晚霞、橙红云层与深色天际线，柔和夕照从画面右后方勾勒短发、毛衣绒毛、肩颈和腿部轮廓，前方弱反光补亮面部与脚背，整体呈现高饱和、梦幻、强烈的时尚杂志大片风格，强调豹纹织物的柔软纹理、短裤皮革反光、银色链条细节、真实皮肤质感、脚趾结构与混凝土粗糙表面，画面清晰细腻。"
+      },
+      "color": "#009933",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 42,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1290,
+        900
+      ],
+      "size": [
+        313.97861920929176,
+        88
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 108
+        },
+        {
+          "label": "text",
+          "localized_name": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            111
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "text": true
+        }
+      },
+      "widgets_values": [
+        "worst quality, bad anatomy, watermark, jpeg artifact"
+      ],
+      "widgets_values_named": {
+        "text": "worst quality, bad anatomy, watermark, jpeg artifact"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 43,
+      "type": "DepthAnythingV2Preprocessor",
+      "pos": [
+        860,
+        1100
+      ],
+      "size": [
+        320,
+        82
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 113
+        },
+        {
+          "localized_name": "ckpt_name",
+          "name": "ckpt_name",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution",
+          "name": "resolution",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            114,
+            115
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingV2Preprocessor",
+        "cnr_id": "comfyui_controlnet_aux"
+      },
+      "widgets_values": [
+        "depth_anything_v2_vitl.pth",
+        1024
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "depth_anything_v2_vitl.pth",
+        "resolution": 1024
+      }
+    },
+    {
+      "id": 45,
+      "type": "MOSSImageControl",
+      "pos": [
+        860,
+        1520
+      ],
+      "size": [
+        300,
+        190
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "正面",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 110
+        },
+        {
+          "localized_name": "负面",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 111
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 112
+        },
+        {
+          "localized_name": "color_map",
+          "name": "color_map",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "depth_map",
+          "name": "depth_map",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 114
+        },
+        {
+          "localized_name": "强度",
+          "name": "strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "start_percent",
+          "name": "start_percent",
+          "type": "FLOAT",
+          "widget": {
+            "name": "start_percent"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "end_percent",
+          "name": "end_percent",
+          "type": "FLOAT",
+          "widget": {
+            "name": "end_percent"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "正面",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            116
+          ]
+        },
+        {
+          "localized_name": "负面",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            117
+          ]
+        }
+      ],
+      "title": "MOSS-Image Color/Depth Control",
+      "properties": {
+        "Node name for S&R": "MOSSImageControl",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1.1,
+        0.0,
+        1.0
+      ],
+      "widgets_values_named": {
+        "strength": 0.6,
+        "start_percent": 0,
+        "end_percent": 0.8
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 46,
+      "type": "PreviewImage",
+      "pos": [
+        60,
+        2300
+      ],
+      "size": [
+        260,
+        380
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 115
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "title": "深度图预览",
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 47,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        860,
+        1900
+      ],
+      "size": [
+        319.65672826705645,
+        106.83905452888234
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "width",
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "label": "height",
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "label": "batch_size",
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            118
+          ]
+        }
+      ],
+      "title": "MOSS 实际宽高（来自 #19）",
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.42.0",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true
+          },
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "widget_ue_connectable": {
+          "batch_size": true,
+          "width": true,
+          "height": true
+        }
+      },
+      "widgets_values": [
+        1024,
+        1360,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 48,
+      "type": "MarkdownNote",
+      "pos": [
+        60,
+        400
+      ],
+      "size": [
+        420,
+        220
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "# MOSS 人像肌感 + 姿势深度控制\n\n- 姿势图片 → Depth Anything V2 → MOSSImageControl.depth_map：把骨架和机位钉死。\n- 组合提示词 → 正面 CLIPTextEncode：人像/服装的描述文字在这里生效（MOSS 是文生图，\n  参考图只通过深度图和提示词起作用）。\n- 姿势图进来时已经是 CharacterAtlas 的 width / height，深度图同尺寸；只有 EmptyFlux2LatentImage 是手填的 1024 × 1360，换尺寸时把它和节点宽高一起改。\n\n这一版包含：base+sft 0.45 合并 → Color/Depth Control LoRA → 观澜 LoRA → SkipLayerGuidance。\n想要更强/更弱的人像质感，调 `MOSSMergePreset` 的 strength 与 `LoraLoaderModelOnly` 的强度。\n\nVOSR2 放大那条线没带上，需要的话从你自己的 MOSS 工作流里拷过来接在 VAEDecode 后面。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      101,
+      30,
+      0,
+      32,
+      0,
+      "MODEL"
+    ],
+    [
+      102,
+      31,
+      0,
+      32,
+      1,
+      "MODEL"
+    ],
+    [
+      103,
+      32,
+      0,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      104,
+      33,
+      0,
+      34,
+      0,
+      "MODEL"
+    ],
+    [
+      105,
+      34,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      106,
+      35,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      107,
+      40,
+      0,
+      41,
+      0,
+      "CLIP"
+    ],
+    [
+      108,
+      40,
+      0,
+      42,
+      0,
+      "CLIP"
+    ],
+    [
+      109,
+      1,
+      4,
+      41,
+      1,
+      "STRING"
+    ],
+    [
+      110,
+      41,
+      0,
+      45,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      111,
+      42,
+      0,
+      45,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      112,
+      37,
+      0,
+      45,
+      2,
+      "VAE"
+    ],
+    [
+      113,
+      1,
+      2,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      114,
+      43,
+      0,
+      45,
+      4,
+      "IMAGE"
+    ],
+    [
+      115,
+      43,
+      0,
+      46,
+      0,
+      "IMAGE"
+    ],
+    [
+      116,
+      45,
+      0,
+      36,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      117,
+      45,
+      1,
+      36,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      118,
+      47,
+      0,
+      36,
+      3,
+      "LATENT"
+    ],
+    [
+      119,
+      37,
+      0,
+      38,
+      1,
+      "VAE"
+    ],
+    [
+      120,
+      36,
+      0,
+      38,
+      0,
+      "LATENT"
+    ],
+    [
+      121,
+      38,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.75,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "version": 0.4
+}
